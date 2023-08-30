@@ -1,6 +1,7 @@
 import * as Api from './Api';
+import URL_INFO from './../utils/constants/Url';
 
-const API_URL = `https://api.github.com/repos/facebook/react`;
+const API_URL = `https://api.github.com/repos/${URL_INFO.ORGANIZATION_NAME}/${URL_INFO.REPOSITORY_NAME}`;
 
 export async function getIssueList(currentPage: number): Promise<any> {
 	const params = `issues`;
