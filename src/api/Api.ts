@@ -1,54 +1,74 @@
-import { getToken } from '../utils/token/Token';
+import axios from 'axios';
 
-const baseURL = 'https://www.pre-onboarding-selection-task.shop';
+interface RequestParams {
+	endpoint: string | undefined;
+	method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+	params?: string;
+	query?: string;
+	data?: any;
+	requiresToken?: boolean;
+}
 
-const createHeaders = () => {
-	const headers = new Headers();
-	const token = getToken();
+async function request<T>({
+	endpoint,
+	method,
+	params = '',
+	query = '',
+	data,
+	requiresToken = true,
+}: RequestParams): Promise<T> {
+	const apiUrl = params ? `${endpoint}/${params}${query ? `?${query}` : ''}` : endpoint;
+	const headers: { [key: string]: string } = {
+		'Content-Type': 'application/json',
+	};
 
-	if (token) {
-		headers.append('Authorization', `Bearer ${token}`);
-	}
-	return headers;
-};
+	requiresToken && (headers.Authorization = `${process.env.REACT_APP_GITHUB_TOKEN}`);
 
-export const callApi = async (endpoint: string, method: string, data: object = {}) => {
-	const url = `${baseURL}${endpoint}`;
-	const headers = createHeaders();
-
-	if (method === 'GET') {
-		const response = await fetch(url, {
-			method,
-			headers,
-		});
-		return await handleResponse(response);
-	} else {
-		headers.append('Content-Type', 'application/json');
-		const response = await fetch(url, {
-			method,
-			headers,
-			body: JSON.stringify(data),
-		});
-		return await handleResponse(response);
-	}
-};
-
-const handleResponse = async (response: Response) => {
-	const contentLength = response.headers.get('Content-Length');
 	try {
-		if (!response.ok) {
+		const response = await axios.request<T>({
+			url: apiUrl,
+			method,
+			headers,
+			data,
+		});
+
+		return response.data;
+	} catch (error: any) {
+		if (error.response) {
+			const { status } = error.response;
+			throw new Error(status);
+		} else {
 			throw new Error('요청이 실패하였습니다.');
 		}
-		if (contentLength === null || contentLength === '0') {
-			return;
-		} else {
-			const responseData = await response.json();
-			return responseData;
-		}
-	} catch (error) {
-		if (error instanceof Error) {
-			const errorData = await response.json();
-			throw new Error(errorData.message || response.statusText);
-		}
 	}
-};
+}
+
+const get = <T>(
+	endpoint: string | undefined,
+	params = '',
+	requiresToken = true,
+	query = '',
+): Promise<T> => request<T>({ endpoint, method: 'GET', params, requiresToken, query });
+
+const post = <T>(
+	endpoint: string | undefined,
+	params = '',
+	requiresToken = true,
+	data: any,
+): Promise<T> => request<T>({ endpoint, method: 'POST', params, requiresToken, data });
+
+const put = <T>(
+	endpoint: string | undefined,
+	params = '',
+	requiresToken = true,
+	data: any,
+): Promise<T> => request<T>({ endpoint, method: 'PUT', params, requiresToken, data });
+
+const del = <T>(
+	endpoint: string | undefined,
+	params = '',
+	requiresToken = true,
+	data: any = {},
+): Promise<T> => request<T>({ endpoint, method: 'DELETE', params, requiresToken, data });
+
+export { get, post, put, del as delete };
