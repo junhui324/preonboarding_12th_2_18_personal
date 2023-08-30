@@ -1,22 +1,19 @@
 import { Suspense, lazy } from 'react';
-import { Global } from '@emotion/react';
-import { globalStyles } from './utils/styles/GlobalStyles';
 import { Routes, Route } from 'react-router-dom';
+
+import LoadingSpinner from './components/loading/Loading';
 
 import ROUTES from './utils/constants/Routes';
 
-//import Layout from './components/layout/Layout';
 const MainPage = lazy(() => import('./pages/main/Main'));
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const NotFoundPage = lazy(() => import('./pages/error/NotFoundPage'));
 const IssueList = lazy(() => import('./pages/issueList'));
 const IssueDetail = lazy(() => import('./pages/issueDetail'));
 
 function App() {
 	return (
 		<>
-			<Global styles={globalStyles} />
-
-			<Suspense fallback="...Loading">
+			<Suspense fallback={<LoadingSpinner />}>
 				<Routes>
 					<Route path={ROUTES.MAIN} element={<MainPage />} />
 					<Route path={ROUTES.ISSUELIST} element={<IssueList />} />
