@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { getIssue } from '../../api/IssueApi';
 import LoadingSpinner from '../loading/Loading';
+import IssueTitle from '../issueListForm/IssueTitle';
 
 import ReactMarkdown from 'react-markdown';
 
@@ -35,13 +36,11 @@ export default function IssueDetailForm() {
 			{!isLoading && issue ? (
 				<div>
 					<div>
-						작성자 프로필 이미지 : <img src={issue.user.avatar_url} alt="프로필 이미지" />
+						<img src={issue.user.avatar_url} alt="프로필 이미지" />
 					</div>
-					<div>이슈 번호 : {number}</div>
-					<div>이슈 제목 : {issue.title}</div>
-					<div>작성자 : {issue.user.login}</div>
-					<div>작성일 : {issue.created_at}</div>
-					<div>코멘트 : {issue.comments}</div>
+					<div>
+						<IssueTitle issue={issue} />
+					</div>
 					<div>
 						본문 : <ReactMarkdown children={issue.body}></ReactMarkdown>
 					</div>

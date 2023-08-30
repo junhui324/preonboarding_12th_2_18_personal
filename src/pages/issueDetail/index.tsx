@@ -1,4 +1,4 @@
-import IssueDetailForm from '../../components/issueDetaleForm/IssueDetailForm';
+import IssueDetailForm from '../../components/issueDetailForm/IssueDetailForm';
 import Header from '../../components/header/Header';
 
 export default function IssueDetail() {
