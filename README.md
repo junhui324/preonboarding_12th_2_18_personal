@@ -1,6 +1,6 @@
 ## 📚 과제
 
-동료학습을 통해서 팀에서 생각한 원티드 프리온보딩 프론트엔드 [인턴십 선발 과제](https://github.com/walking-sunset/selection-task)의 Best Pratice를 만들고 제출해주세요.
+동료학습을 통해서 팀에서 생각한 원티드 프리온보딩 프론트엔드 2주차 과제의 Best Pratice를 만들고 제출해주세요.
 
 > Best Practice란 팀원들이 각자의 구현 방법을 설명하고 토론했을 때 팀 안에서 이 방법이 가장 효율적이라고 판단되는 것
 > 
@@ -16,10 +16,10 @@ $ npm start
 
 ✌️ 개인의 서버에 올린 작업물로 2023년 10월부터는 접속이 불가 할 수 있는 점 양해바랍니다.
 
-[배포 링크 - Todo-List](https://main.d38gez3r418jap.amplifyapp.com/)
+[배포 링크 - Issue-list](http://pre-onboarding-12th-2-18.s3-website.ap-northeast-2.amazonaws.com/)
 
 ### 동작 영상
-<img width='450px' src='https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/assets/72495998/43499e3b-47e2-4cec-9478-222e6b07ada9' alt='원티드-18팀-1차과제' />
+<img width='800px' src='https://github.com/richcollector/issues-list/assets/104312779/60e18cca-5a97-45a0-9659-ce1e822d47b2' alt='원티드-18팀-2차과제' />
 
 
 ## 🔥 과제 수행 방식
@@ -33,7 +33,7 @@ $ npm start
 - 최종 결과물 도출
 
 ## 🔧 기술 스택
-<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/awsamplify-FF9900?style=for-the-badge&logo=awsamplify&logoColor=white"> <img src="https://img.shields.io/badge/emotion-FE5196?style=for-the-badge&logo=emotion&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white">
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/amazons3-569A31?style=for-the-badge&logo=amazons3&logoColor=white"> <img src="https://img.shields.io/badge/scss-CC6699?style=for-the-badge&logo=scss&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white">
 
 ## 🔨 협업 Tool
 
@@ -50,25 +50,22 @@ $ npm start
 
 ## 🎈 Best Practice 선정
 
-- [Todo-List](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/13)
-- [로그인 / 회원가입](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/12)
-- [API 설정 : api.ts, authApi.ts, todoApi.ts 파일 생성](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/11)
-- [커스텀 훅 및 유틸 함수 사용](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/10)
-- [폴더 구조 아키텍쳐 생성](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/9)
-- [라우팅 설정](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/8)
-- [emotion 설치 및 글로벌 css 설정](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/7)
-- [ eslint, pretteir, husky, lint-staged 설정](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/6/)
-
-## ❓ 기타 변경사항
-
-- [회원가입/로그인 유효성 검사 메세지 분리 & div태그를 시멘틱 태그로 변경](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/17)
+- [광고 이미지 처리](https://github.com/preOnBorading-Idle/pre-onboarding-12th-2-18/issues/16)
+- [IssueDetail 페이지 구현](https://github.com/preOnBorading-Idle/pre-onboarding-12th-2-18/issues/15)
+- [IssueList 페이지 구현](https://github.com/preOnBorading-Idle/pre-onboarding-12th-2-18/issues/14)
+- [api 설정](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/13)
+- [커스텀 훅 및 유틸 함수 사용](https://github.com/preOnBorading-Idle/pre-onboarding-12th-2-18/issues/12)
+- [폴더 구조 아키텍쳐 생성](https://github.com/preOnBorading-Idle/pre-onboarding-12th-2-18/issues/4)
+- [라우팅 설정](https://github.com/preOnBorading-Idle/pre-onboarding-12th-2-18/issues/3)
+- [css 설정](https://github.com/preOnBorading-Idle/pre-onboarding-12th-2-18/issues/2)
+- [eslint, pretteir, husky, lint-staged 설정](https://github.com/preOnBorading-Idle/pre-onboarding-12th-2-18/issues/1)
 
 ## ✅ 팀 컨벤션
 - 브랜치 형식
     
     ```jsx
     main
-    |_dev
+    |_develop
     	|_feature/a
     	|_feature/b
     	|_feature/c
@@ -81,6 +78,7 @@ $ npm start
     | docs | 문서를 수정한 경우 |
     | style | 코드 포맷 변경, 세미 콜론 누락, 코드 수정이 없는 경우 |
     | refactor | 프로덕션 코드 리팩토링 |
+    | chore | 기타 변경사항 |
     | test | test 관련한 코드의 추가, 수정한 경우 |
     | design | CSS 등 사용자 UI 디자인 변경 |
     | comment | 필요한 주석 추가 및 변경 |
